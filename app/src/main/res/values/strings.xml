@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">FitSyncKoala</string>
+    <string name="name_hint">Name of activity</string>
+    <string name="description_hint">Description to appear on Strava</string>
+    <string name="are_results_correct_prompt">Are these results correct?</string>
+    <string name="time">Time: </string>
+    <string name="distance">Distance:</string>
+    <string name="kcal_burned">Kcal burned:</string>
+    <string name="correct">Correct</string>
+    <string name="no">No</string>
+    <string name="permission_denied_toast">You need to give permission to use the camera to scan the results.</string>
+    <string name="results_uploaded">Results were uploaded!</string>
+    <string name="auth_failed_try_again">Authorization failed. Try again</string>
+    <string name="network_error_try_again">Networking error. Try again</string>
+    <string name="i_burned">Also I burned&#160;</string>
+    <string name="include_kcal_in_description">Include Kcal in description</string>
+    <string name="access_denied_rationale">Access denied. The application cannot upload results without access</string>
+
+    <string-array name="activity_type">
+        <item>Workout</item>
+        <item>Run</item>
+        <item>Hike</item>
+        <item>Walk</item>
+        <item>Yoga</item>
+    </string-array>
+</resources>

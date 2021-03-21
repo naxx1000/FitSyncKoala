@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_yellow"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinner_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lt_internet_regular"
+        android:padding="10dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_type">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_edit_text"
+            android:fontFamily="@font/lt_internet_bold"
+            android:hint="@string/name_hint"
+            android:inputType="textCapSentences"
+            android:lines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/btn_remove_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@id/til_name"
+        app:layout_constraintEnd_toEndOf="@id/til_name"
+        app:layout_constraintTop_toTopOf="@id/til_name"
+        app:tint="@color/black_60a" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lt_internet_regular"
+        android:padding="10dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edit_text"
+            android:fontFamily="@font/lt_internet_regular"
+            android:gravity="start"
+            android:hint="@string/description_hint"
+            android:inputType="textCapSentences"
+            android:maxHeight="200dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            tools:text="Description" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lt_internet_bold"
+        android:text="Time"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        app:layout_constraintBottom_toBottomOf="@id/tv_time"
+        app:layout_constraintStart_toStartOf="@id/til_description" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lt_internet_bold"
+        android:text="Distance"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        app:layout_constraintBottom_toBottomOf="@id/tv_distance"
+        app:layout_constraintStart_toStartOf="@id/til_description" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lt_internet_bold"
+        android:text="Kcal burned"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        app:layout_constraintBottom_toBottomOf="@id/tv_kcal"
+        app:layout_constraintStart_toStartOf="@id/til_description" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cb_kcal_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:fontFamily="@font/lt_internet_regular"
+        android:text="Include kcal in description"
+        app:layout_constraintStart_toStartOf="@id/til_description"
+        app:layout_constraintTop_toBottomOf="@id/tv_kcal" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/lt_internet_regular"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintEnd_toStartOf="@id/btn_edit_time"
+        app:layout_constraintTop_toBottomOf="@id/til_description"
+        tools:text="58 min 30 sec" />
+
+    <ImageButton
+        android:id="@+id/btn_edit_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="4dp"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintBottom_toBottomOf="@id/tv_time"
+        app:layout_constraintEnd_toEndOf="@id/til_description"
+        app:layout_constraintTop_toTopOf="@id/tv_time"
+        app:tint="@color/black_60a" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/lt_internet_regular"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintEnd_toStartOf="@id/btn_edit_distance"
+        app:layout_constraintTop_toBottomOf="@id/tv_time"
+        tools:text="4.2 km" />
+
+    <ImageButton
+        android:id="@+id/btn_edit_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="4dp"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintBottom_toBottomOf="@id/tv_distance"
+        app:layout_constraintEnd_toEndOf="@id/til_description"
+        app:layout_constraintTop_toTopOf="@id/tv_distance"
+        app:tint="@color/black_60a" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_kcal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/lt_internet_regular"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintEnd_toStartOf="@id/btn_edit_kcal"
+        app:layout_constraintTop_toBottomOf="@id/tv_distance"
+        tools:text="132.32 kcal" />
+
+    <ImageButton
+        android:id="@+id/btn_edit_kcal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="4dp"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintBottom_toBottomOf="@id/tv_kcal"
+        app:layout_constraintEnd_toEndOf="@id/til_description"
+        app:layout_constraintTop_toTopOf="@id/tv_kcal"
+        app:tint="@color/black_60a" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_upload_result"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:elevation="4dp"
+        android:text="Upload result"
+        android:textAppearance="@style/TextAppearance.FitKoala.Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pb_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

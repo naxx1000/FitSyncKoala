@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.preview.PreviewFragment">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.camera.view.PreviewView>
+
+    <View
+        android:id="@+id/v_progress_full_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_60a"
+        android:clickable="true"
+        android:visibility="gone"
+        tools:ignore="KeyboardInaccessibleWidget" />
+
+    <ProgressBar
+        android:id="@+id/pb_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/preview_helper_30a"
+        app:layout_constraintBottom_toTopOf="@id/cl_main"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/black_translucent"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_upload_data"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="UPLOAD ACTIVITY"
+            android:textAppearance="@style/TextAppearance.FitKoala.Button"
+            app:icon="@drawable/ic_cloud_upload"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_manually_upload_data"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_manually_upload_data"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="MANUAL ACTIVITY"
+            android:textAppearance="@style/TextAppearance.FitKoala.Button"
+            app:icon="@drawable/ic_edit"
+            app:iconGravity="textStart"
+            app:layout_constraintBottom_toBottomOf="@id/btn_upload_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_upload_data"
+            app:layout_constraintTop_toTopOf="@id/btn_upload_data" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_total_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/lt_internet_regular"
+            android:text="Total Time Exercising: "
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/tv_total_calories_label"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_total_calories_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/lt_internet_regular"
+            android:text="Total Calories Burned"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/tv_total_distance_label"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_total_distance_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/lt_internet_regular"
+            android:text="Total Distance Run"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/btn_upload_data"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_total_time_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/lt_internet_regular"
+            android:paddingTop="16dp"
+            android:text="_"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tv_total_time_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="25 min 20 sec" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_total_calories_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/lt_internet_regular"
+            android:text="_"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tv_total_calories_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="112.49 kcal" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_total_distance_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/lt_internet_regular"
+            android:text="_"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tv_total_distance_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="1.11 km" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

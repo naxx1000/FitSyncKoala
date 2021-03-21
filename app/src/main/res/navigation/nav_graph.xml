@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/previewFragment">
+
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="com.rakiwow.fitsynckoala.presentation.preview.PreviewFragment"
+        android:label="fragment_preview"
+        tools:layout="@layout/fragment_preview">
+        <action
+            android:id="@+id/action_previewFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_previewFragment_to_syncFragment"
+            app:destination="@id/syncFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.rakiwow.fitsynckoala.presentation.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_syncFragment"
+            app:destination="@id/syncFragment"
+            app:popUpTo="@id/previewFragment"/>
+        <argument
+            android:name="distance"
+            app:argType="float" />
+        <argument
+            android:name="elapsed_time"
+            app:argType="integer" />
+        <argument
+            android:name="kcal"
+            app:argType="float" />
+    </fragment>
+    <fragment
+        android:id="@+id/syncFragment"
+        android:name="com.rakiwow.fitsynckoala.presentation.sync.SyncFragment"
+        android:label="SyncFragment"
+        tools:layout="@layout/fragment_sync">
+        <argument
+            android:name="distance"
+            app:argType="float" />
+        <argument
+            android:name="elapsed_time"
+            app:argType="integer" />
+        <argument
+            android:name="kcal"
+            app:argType="float" />
+        <action
+            android:id="@+id/action_syncFragment_to_previewFragment"
+            app:destination="@id/previewFragment"
+            app:popUpTo="@id/previewFragment"
+            app:popUpToInclusive="false"/>
+        <action
+            android:id="@+id/action_syncFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>

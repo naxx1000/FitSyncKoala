@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/light_yellow"
+    android:paddingStart="20dp"
+    android:paddingTop="30dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="10dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_hr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="hr"
+        android:textAppearance="@style/TextAppearance.FitKoala.SmallCaption"
+        app:layout_constraintEnd_toEndOf="@id/numberPickerHour"
+        app:layout_constraintStart_toStartOf="@id/numberPickerHour"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/numberPickerHour"
+        android:layout_width="wrap_content"
+        android:background="@drawable/shape_number_picker"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/numberPickerMinute"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_hr" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="min"
+        android:textAppearance="@style/TextAppearance.FitKoala.SmallCaption"
+        app:layout_constraintEnd_toEndOf="@id/numberPickerMinute"
+        app:layout_constraintStart_toStartOf="@id/numberPickerMinute"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/numberPickerMinute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_number_picker"
+        app:layout_constraintEnd_toStartOf="@+id/numberPickerSecond"
+        app:layout_constraintStart_toEndOf="@+id/numberPickerHour"
+        app:layout_constraintTop_toBottomOf="@id/tv_min" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_sec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="sec"
+        android:textAppearance="@style/TextAppearance.FitKoala.SmallCaption"
+        app:layout_constraintEnd_toEndOf="@id/numberPickerSecond"
+        app:layout_constraintStart_toStartOf="@id/numberPickerSecond"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/numberPickerSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_number_picker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/numberPickerMinute"
+        app:layout_constraintTop_toBottomOf="@id/tv_sec" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_dialog_time_negative"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Dismiss"
+        android:textAppearance="@style/TextAppearance.FitKoala.Button"
+        app:layout_constraintEnd_toEndOf="@id/numberPickerHour"
+        app:layout_constraintStart_toStartOf="@id/numberPickerHour"
+        app:layout_constraintTop_toBottomOf="@id/numberPickerHour" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_dialog_time_positive"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Set"
+        android:textAppearance="@style/TextAppearance.FitKoala.Button"
+        app:layout_constraintEnd_toEndOf="@id/numberPickerSecond"
+        app:layout_constraintStart_toStartOf="@id/numberPickerSecond"
+        app:layout_constraintTop_toBottomOf="@id/numberPickerSecond" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
